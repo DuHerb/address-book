@@ -60,7 +60,14 @@ function displayContactDetails(addressBooktoDisplay) {
   contactsList.html(htmlForContactInfo);
 }
 
+function attachContactListeners(){
+  $("#contacts").on("click", "li", function(){
+    console.log("The id of this <li> is " + this.id + ".");
+  });
+};
+
 $(document).ready(function(){
+  attachContactListeners();
   $("form#new-contact").submit(function(event){
     event.preventDefault();
 
