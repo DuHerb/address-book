@@ -52,7 +52,12 @@ Contact.prototype.fullName = function() {
 var addressBook = new AddressBook();
 
 function displayContactDetails(addressBooktoDisplay) {
-
+  var contactsList = $("ul#contacts");
+  var htmlForContactInfo = "";
+  addressBooktoDisplay.contacts.forEach(function(contact){
+    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
+  });
+  contactsList.html(htmlForContactInfo);
 }
 
 $(document).ready(function(){
@@ -60,10 +65,10 @@ $(document).ready(function(){
     event.preventDefault();
 
     var inputtedFirstName = $("input#new-first-name").val();
-    var inputtedLastName = $("input#new-last-Name").val();
+    var inputtedLastName = $("input#new-last-name").val();
     var inputtedPhoneNumber = $("input#new-phone-number").val();
     var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
     addressBook.addContact(newContact);
-    console.log(addressBook.contacts);
+    displayContactDetails(addressBook);
   })
 })
