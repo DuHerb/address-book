@@ -34,7 +34,7 @@ AddressBook.prototype.deleteContact = function(id) {
       }
     }
   };
-  reutrn false;
+  return false;
 }
 
 //Business Logic for Contacts
@@ -47,3 +47,23 @@ function Contact(firstName, lastName, phoneNumber) {
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
+
+//User Interface Logic
+var addressBook = new AddressBook();
+
+function displayContactDetails(addressBooktoDisplay) {
+
+}
+
+$(document).ready(function(){
+  $("form#new-contact").submit(function(event){
+    event.preventDefault();
+
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-Name").val();
+    var inputtedPhoneNumber = $("input#new-phone-number").val();
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    addressBook.addContact(newContact);
+    console.log(addressBook.contacts);
+  })
+})
