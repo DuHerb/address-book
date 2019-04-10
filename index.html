@@ -16,6 +16,13 @@
           <h2>Add a Contact:</h2>
           <form id="new-contact" action="index.html" method="post">
             <div class="form-group">
+              <label for="new-address-type">Work or Personal?</label>
+              <select id="new-address-type" name="">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="new-first-name">First Name</label>
               <input id="new-first-name" type="text" name="" value="">
             </div>
@@ -31,6 +38,18 @@
               <label for="new-email">Email</label>
               <input id="new-email" type="email" name="" value="">
             </div>
+            <div class="form-group">
+              <label for="new-street">Street</label>
+              <input id="new-street" type="text" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="new-city">City</label>
+              <input id="new-city" type="text" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="new-zip">Zip</label>
+              <input id="new-zip" type="text" name="" value="">
+            </div>
             <button class="btn btn-dark" type="submit" name="button">Add</button>
           </form><!-- /.form -->
           <h2>Contacts:</h2>
@@ -40,8 +59,13 @@
           <div id="show-contacts">
             <p>First Name: <span class="first-name"></span></p>
             <p>Last Name: <span class="last-name"></span></p>
+            <p>Contact Type: <span class="address-type"></span></p>
             <p>Phone Number: <span class="phone-number"></span></p>
             <p>Email: <span class="email"></span></p>
+            <p>Street: <span class="street"></span></p>
+            <p>City: <span class="city"></span></p>
+            <p>Zip: <span class="zip"></span></p>
+
             <div id="buttons"></div>
           </div>
       </div><!-- /.col-md-6 -->
