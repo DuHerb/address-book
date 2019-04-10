@@ -16,6 +16,13 @@
           <h2>Add a Contact:</h2>
           <form id="new-contact" action="index.html" method="post">
             <div class="form-group">
+              <label for="new-address-type">Work or Personal?</label>
+              <select id="new-address-type" name="">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="new-first-name">First Name</label>
               <input id="new-first-name" type="text" name="" value="">
             </div>
@@ -30,6 +37,18 @@
             <div class="form-group">
               <label for="new-email">Email</label>
               <input id="new-email" type="email" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="new-street">Street</label>
+              <input id="new-street" type="text" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="new-city">City</label>
+              <input id="new-city" type="text" name="" value="">
+            </div>
+            <div class="form-group">
+              <label for="new-zip">Zip</label>
+              <input id="new-zip" type="text" name="" value="">
             </div>
             <button class="btn btn-dark" type="submit" name="button">Add</button>
           </form><!-- /.form -->
