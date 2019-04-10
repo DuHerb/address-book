@@ -74,16 +74,30 @@ function displayContactDetails(addressBooktoDisplay) {
   contactsList.html(htmlForContactInfo);
 }
 
-function showContact(contactId) {
+function showContact(contactId) { //  continue here .... need to add <div class="address-displY" inside a forEach Loop for each address in a contact use buildContactType() to insert fields into div
   var contact = addressBook.findContact(contactId);
   $("#show-contacts").show();
   $(".first-name").html(contact.firstName);
   $(".last-name").html(contact.lastName);
-  $(".phone-number").html(contact.phoneNumber);
-  $(".email").html(contact.email);
+
+  for(i=0;i<contact.addressList.length;i++){
+
+  }
+  // $(".phone-number").html(contact.phoneNumber);
+  // $(".email").html(contact.email);
   var buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" + contact.id + ">Delete</button>");
+}
+
+function buildContactType(address){
+  var addressType = "<p>Contact Type: " + address.type + "</p>";
+  var addressPhoneNumber = "<p>Phone Number: " + address.phoneNumber + "</p>";
+  var addressEmail = "<p>Email: " + address.email + "</p>";
+  var addressStreet = "<p>Street: " + address.street + "</p>";
+  var addressCity = "<p>City: " + address.city + "</p>";
+  var addressZip = "<p>Zip Code: " + address.zip + "</p>";
+  return addressType + addressPhoneNumber + addressEmail + addressStreet + addressCity + addressZip;
 }
 
 function attachContactListeners(){
@@ -113,7 +127,7 @@ $(document).ready(function(){
     var inputtedStreet = $("input#new-street").val();
     var inputtedCity = $("input#new-city").val();
     var inputtedZip = $("input#new-zip").val();
-
+    //clear input fields
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
     $("input#new-phone-number").val("");
